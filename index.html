@@ -1,0 +1,81 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>eStore | Marketplace Assistant</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f5f5f7;color:#1d1d1f;font:16px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:24px 14px}main{max-width:580px;margin:auto;background:#fff;border:1px solid #dedee3;border-radius:24px;padding:24px;box-shadow:0 12px 40px #00000008}header{display:flex;align-items:center;gap:13px}h1{font-size:29px;letter-spacing:-1.5px;margin:0}small,footer{color:#777;font-size:13px}header small:last-child{margin-left:auto}hr{border:0;border-top:1px solid #e5e5e9;margin:22px 0}.line{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}label{font-size:14px;font-weight:600}#title{width:100%;min-height:85px;font-size:21px;font-weight:650;letter-spacing:-.5px;padding:16px;resize:vertical}textarea{font:inherit;color:inherit;border:1px solid #dedee3;border-radius:13px;background:#fafafa;width:100%;padding:14px;line-height:1.55;resize:vertical}#desc{margin-top:10px;min-height:240px}button,a.action{display:block;width:100%;border-radius:12px;border:1px solid #d5d5db;padding:13px;margin-top:10px;font:600 15px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-align:center;cursor:pointer;background:transparent;color:inherit;text-decoration:none}.primary{background:#1d1d1f!important;color:white!important;border-color:transparent!important}button:hover,a:hover{opacity:.8}footer{text-align:center;margin-top:18px}#status{min-height:20px;text-align:center;font-size:13px;color:#168044;margin-top:10px}@media(prefers-color-scheme:dark){body{background:#111;color:#f5f5f7}main{background:#1c1c1e;border-color:#39393d}textarea{background:#262629;border-color:#444}hr{border-color:#39393d}button{border-color:#48484d}.primary{background:#f5f5f7!important;color:#111!important}small,footer{color:#aaa}}
+</style></head><body><main><header><div style="font-size:32px">🍏</div><div><h1>eStore</h1><small>Marketplace Assistant</small></div><small>v1.1</small></header><hr><div class="line"><label for="title">Título comercial</label><small id="count">Generación #1</small></div><textarea id="title" rows="2">iPhone nuevos y seminuevos con garantía 🍎</textarea><div id="jsnotice" style="font-size:13px;line-height:1.5;margin-top:10px;color:inherit">Si este aviso sigue visible, el visor no ejecuta JavaScript. Abre esta página en un navegador real o publícala en un alojamiento web para activar los botones.</div><button type="button" class="primary" id="generate">⤨ Generar título aleatorio</button><button type="button" id="copyTitle">Copiar título</button><hr><label for="desc">Descripción general</label><textarea id="desc" rows="10">🍎 ¡TU PRÓXIMO IPHONE ESTÁ EN eSTORE!
+
+Encuentra toda la gama de productos Apple a excelentes precios. Tenemos opciones para diferentes presupuestos, con garantía y atención personalizada.
+
+📱 iPhone: desde iPhone 13 hasta iPhone 18 Pro Max.
+⌚ Apple Watch
+🎧 AirPods
+💻 MacBook
+📲 iPad
+
+¿Por qué comprar en eStore?
+
+✅ Equipos nuevos y seminuevos.
+✅ Libres para cualquier compañía.
+✅ Diferentes modelos, colores y capacidades.
+✅ Garantía incluida.
+✅ Aceptamos tarjetas de crédito.
+✅ Opciones de pago de hasta 12 meses.
+🔥 ¡Mejoramos cualquier precio!
+
+📍 ¡VISÍTANOS EN CUALQUIERA DE NUESTRAS SUCURSALES!
+
+📍 SORIANA VALLES
+Junto a Paseo Central.
+🕙 Lunes a sábado: 10:00 a.m. – 8:30 p.m.
+🕚 Domingo: 11:00 a.m. – 7:00 p.m.
+
+📍 SORIANA HOMERO
+Al norte de la ciudad.
+🕘 Lunes a sábado: 9:00 a.m. – 7:30 p.m.
+🕚 Domingo: 11:00 a.m. – 7:00 p.m.
+
+⭐ ¡IMPORTANTE!
+Si nos visitas por esta publicación, pregunta directamente por ALEXIS RÍOS para recibir atención personalizada. Con gusto te atenderé, te mostraré las opciones disponibles y te ayudaré a elegir tu próximo equipo.
+
+📲 ¿Prefieres cotizar antes de visitarnos?
+Contáctame directamente:
+6️⃣1️⃣4️⃣ 1️⃣4️⃣1️⃣ 3️⃣4️⃣1️⃣9️⃣
+
+🍏 eStore | La tecnología Apple al mejor precio.</textarea><button type="button" id="copyDesc">Copiar descripción</button><hr><a class="action primary" href="https://www.facebook.com/marketplace/create/item" target="_blank" rel="noopener noreferrer">Crear publicación en Marketplace ↗</a><div id="status" role="status"></div><footer>eStore · La tecnología Apple al mejor precio.</footer></main><script>
+(function () {
+  'use strict';
+  function el(id) { return document.getElementById(id); }
+  var titles = ['¡Estrena tu próximo iPhone al mejor precio!','iPhone nuevos y seminuevos con garantía 🍎','¡Tenemos el iPhone que estás buscando!','iPhone desde el 13 hasta el 18 Pro Max','¡Renueva tu iPhone con eStore!','Apple iPhone | Excelentes precios y garantía','¡Tu próximo iPhone te está esperando!','iPhone en venta | Diferentes modelos y capacidades','¡Cotiza tu iPhone con nosotros!','iPhone disponibles en Chihuahua 🍎','¡Estrena iPhone con pagos de hasta 12 meses!','Venta de iPhone | Nuevos y seminuevos','¡Mejoramos cualquier precio en iPhone!','Encuentra tu iPhone ideal en eStore','¡Estrena tecnología Apple al mejor precio!','iPhone con garantía y facilidades de pago','¡Es momento de renovar tu iPhone!','iPhone para diferentes presupuestos'];
+  var starts = ['Venta de iPhone','Estrena tu iPhone','Encuentra tu próximo iPhone','iPhone en eStore','Renueva tu iPhone'];
+  var ends = ['con garantía incluida','en Chihuahua','con opciones de pago','a excelentes precios','en diferentes modelos y capacidades','con atención personalizada'];
+  for (var i=0;i<starts.length;i++) for(var j=0;j<ends.length;j++) titles.push(starts[i]+' | '+ends[j]);
+  var pool=[], count=0;
+  function generate() {
+    if(!pool.length) { pool=titles.filter(function(t){return t!==el('title').value;}); }
+    var idx=Math.floor(Math.random()*pool.length);
+    el('title').value=pool.splice(idx,1)[0];
+    el('count').textContent='Generación #'+(++count);
+  }
+  el('generate').addEventListener('click',generate);
+  function status(msg){el('status').textContent=msg;}
+  function fallbackCopy(field, label) {
+    field.focus(); field.select(); field.setSelectionRange(0,field.value.length);
+    try { if(document.execCommand('copy')) {status(label+' copiado ✓');return;} } catch(e){}
+    status('Texto seleccionado. Mantén pulsado y elige Copiar.');
+  }
+  function copy(id,label){
+    var field=el(id);
+    try {
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(field.value).then(function(){status(label+' copiado ✓');},function(){fallbackCopy(field,label);});
+        return;
+      }
+    }catch(e){}
+    fallbackCopy(field,label);
+  }
+  el('copyTitle').addEventListener('click',function(){copy('title','Título');});
+  el('copyDesc').addEventListener('click',function(){copy('desc','Descripción');});
+  try {var saved=localStorage.getItem('estore-description');if(saved!==null)el('desc').value=saved;} catch(e){}
+  el('desc').addEventListener('input',function(){try{localStorage.setItem('estore-description',el('desc').value);}catch(e){}});
+  el('jsnotice').style.display='none';
+  generate();
+})();
+</script></body></html>
